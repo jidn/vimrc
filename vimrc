@@ -63,9 +63,9 @@ set noerrorbells   " stop beeping at me
 set mat=3          " tenths/sec to blink when matching brackets
 " Esc hurts my pinky, exit insert mode with jk
 inoremap jk <esc>
-" Show tabs as the special character »
+" Show invisibles
 set list
-set listchars=nbsp:¬,tab:»\ ,trail:.,extends:#
+set listchars=nbsp:¬,tab:»\ ,trail:·,extends:#
 filetype plugin on  "enable filetype plugins
 filetype indent on
 " Change the shape of the cursor depending on the mode
