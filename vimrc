@@ -28,6 +28,8 @@ Plugin 'vim-airline/vim-airline'
 " Python Plugins ================================
 Plugin 'nvie/vim-flake8'
 Plugin 'hynek/vim-python-pep8-indent'
+" HTML Plugins ==================================
+Plugin 'wavded/vim-stylus'
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -170,6 +172,7 @@ augroup configgroup
     autocmd FileType php setlocal listchars=tab:+\ ,eol:-
     autocmd FileType php setlocal formatprg=par\ -w80\ -T4
     autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufNewFile,BufRead *.styl set filetype=stylus
 augroup END
 augroup AutoSaveFolds
   autocmd!
