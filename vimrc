@@ -19,14 +19,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
-Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline'
+" Python Plugins ================================
+Plugin 'nvie/vim-flake8'
+Plugin 'hynek/vim-python-pep8-indent'
 call vundle#end()
 filetype plugin indent on
 " }}}
