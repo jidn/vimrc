@@ -153,11 +153,11 @@ augroup configgroup
     autocmd Filetype python setlocal textwidth=79
     autocmd Filetype python setlocal autoindent
     autocmd Filetype python setlocal number
-    " enable folding or hiding of indented lines
-    autocmd Filetype python setlocal foldenable
-    " open most folds by default
-    autocmd Filetype python setlocal foldlevel=2
-    "autocmd Filetype python setlocal foldlevelstart=10
+    " " enable folding or hiding of indented lines
+    " autocmd Filetype python setlocal foldenable
+    " " open most folds by default
+    " autocmd Filetype python setlocal foldlevel=2
+    " "autocmd Filetype python setlocal foldlevelstart=10
     autocmd Filetype python setlocal foldmethod=indent
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd Filetype gitcommit setlocal spell textwidth=72
