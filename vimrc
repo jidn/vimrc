@@ -39,7 +39,7 @@ set laststatus=2  " airline won't wait to split a window
 " ctrlP ignore files from .gitignore :)
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:SimpylFold_docstring_preview=1
-let g:EasyMotion_smartcase=1    " lower case matched both; upper only upper
+let g:EasyMotion_smartcase=1    " lower case matched both; upper only upperj
 " ->   config Syntastic {{{
 " I want the errors and warnings to go into the location list
 " now I can use :ll :lne :lopen :lclose
@@ -88,6 +88,32 @@ syntax enable      " enable syntax processing
 set background=dark
 let &t_Co=256
 " }}}
+" -> Status line {{{
+" set laststatus=2    " status line show regardless of number of buffers open
+" function! GitBranch()
+"   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
+" 
+" function! StatuslineGit()
+"   let l:branchname = GitBranch()
+"   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+" endfunction
+" 
+" set statusline=
+" set statusline+=%#PmenuSel#
+" set statusline+=%{StatuslineGit()}
+" set statusline+=%#LineNr#
+" set statusline+=\ %f
+" set statusline+=%m\
+" set statusline+=%=
+" set statusline+=%#CursorColumn#
+" set statusline+=\ %y
+" set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" set statusline+=\[%{&fileformat}\]
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=\ 
+" }}}
 " -> Text, tab and indent related {{{
 set expandtab      " turn tabs into spaces
 set smarttab       " tabs on the start of a line by shiftwidth not tabstop
@@ -114,12 +140,12 @@ set splitright
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Return to last edit position when opening files (You want this!)
- autocmd BufReadPost *
+autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
 " Remember info about open buffers on close
- set viminfo^=%
+set viminfo^=%
 " }}}
 " -> Folding {{{
 " F9 will toggle folds
@@ -154,7 +180,7 @@ augroup configgroup
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd Filetype python setlocal textwidth=79
     autocmd Filetype python setlocal autoindent
-    autocmd Filetype python setlocal number
+    autocmd Filetype python setlocal relativenumber
     " " enable folding or hiding of indented lines
     " autocmd Filetype python setlocal foldenable
     " " open most folds by default
@@ -173,6 +199,9 @@ augroup configgroup
     autocmd FileType php setlocal formatprg=par\ -w80\ -T4
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufNewFile,BufRead *.styl set filetype=stylus
+    autocmd BufEnter *.styl setlocal tabstop=2
+    autocmd BufEnter *.styl setlocal shiftwidth=2
+    autocmd BufEnter *.styl setlocal softtabstop=2
 augroup END
 augroup AutoSaveFolds
   autocmd!
